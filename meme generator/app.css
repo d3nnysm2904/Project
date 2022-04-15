@@ -1,18 +1,27 @@
-.meme-container {
-  margin: 20px; auto;
-  width: fit-content;
-}
-.meme-container label{
-    display: block;
-    margin-bottom: 10px;
+body{
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
 }
 
-.meme-container input{
+#canvas{
+    background-color: black;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 20px;
 }
 
-#picture{
-    width: 100%;
+.container{
+display: flex;
+}
+
+.inputs{
+    background-color: white;
+    margin-left: 10px;
+    width: 50%;
+}
+
+.inputs input{
+   margin: 10px;
 }
