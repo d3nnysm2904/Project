@@ -1,0 +1,18 @@
+.meme-container {
+  margin: 20px; auto;
+  width: fit-content;
+}
+.meme-container label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.meme-container input{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#picture{
+    width: 100%;
+}
