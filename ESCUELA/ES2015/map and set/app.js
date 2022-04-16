@@ -77,7 +77,7 @@ bandMap.keys(); //it gets all keys
 bandMap.values(); //gets the values
 [...bandMap.values()]; //turns all values into array
 
-bandMap.size; //the length of bandMap
+bandMap.size; //the quantity of values in bandMap which is 5
 
 //Looping in maps
 
