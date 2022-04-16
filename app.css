@@ -1,7 +1,8 @@
  body{
     background-image:url("img/background.jpg") ;
     background-size:cover;
-    
+    width: 100%;
+    height:100%;
 }  
 
 #start{
@@ -52,6 +53,8 @@
     grid-template-columns: repeat(4,250px );
    margin-top: 0px; 
  justify-content: center;
+ width: -104vmh;
+ height: -104vmh
  ;
 }
 
