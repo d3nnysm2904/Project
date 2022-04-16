@@ -6,22 +6,16 @@ body{
     color: white;
 }
 
-#canvas{
-    background-color: black;
-    width: 100%;
-    box-sizing: border-box;
+
+#meme-img{
+    display:block;
+
 }
 
-.container{
-display: flex;
-}
-
-.inputs{
-    background-color: white;
-    margin-left: 10px;
-    width: 50%;
-}
-
-.inputs input{
-   margin: 10px;
-}
+.newImg{
+    border: 2px solid black;
+    padding: 3px;
+margin-top: 50px;
+margin-left:23vmax;
+width: 50%;
+height: 50%;}
