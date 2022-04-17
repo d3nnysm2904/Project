@@ -1,15 +1,15 @@
-.grid{
+.grid {
     display: flex;
     flex-wrap: wrap;
     width: 400px;
     height: 400px;
     background-color: blue;
 
-}
+} 
 
-.grid div{
+/* .grid div {
 width: 100px;
 height: 100px;
 background-color:yellow;
 
-}
+} */
