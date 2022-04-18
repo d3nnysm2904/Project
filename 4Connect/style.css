@@ -1,15 +1,22 @@
-.grid {
+/* body{
+    text-align: center;
+}
+
+#board{
+    height: 540px;
+    width: 640px;
+
+    background-color: blue;
+    border: 10px solid black;
+
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
-    background-color: blue;
+}
 
-} 
-
-/* .grid div {
-width: 100px;
-height: 100px;
-background-color:yellow;
-
+.tile{
+    height: 90px;
+    width: 90px;
+    background-color: white;
+    border-radius: 50%;
 } */
