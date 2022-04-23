@@ -24,7 +24,7 @@ for (let [k, v] of Object.entries(obj)) {
 //methods review this is also called whenn a function is added as a value to a key
 
 //storing functions
-
+let ol = {};
 ol.sayHi = function () {
   return "HI";
 };
@@ -56,3 +56,30 @@ const myMath2 = {
     return x * x;
   },
 };
+
+function getHypotenuse(a, b) {
+  return Math.sqrt(a ** 2 + b ** 2);
+}
+
+function getArea(a, b) {
+  return (a * b) / 2;
+}
+
+let side1 = 4;
+let side2 = 3;
+let = side3 = getHypotenuse(side1, side2);
+
+//this
+
+let triangle = {
+  a: 4,
+  b: 3,
+  getArea: function () {
+    return (this.a * this.b) / 2;
+  },
+  getHypotenuse() {
+    return Math.sqrt(this.a ** 2 + this.b ** 2);
+  },
+};
+
+//'this' refers to the object '
