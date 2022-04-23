@@ -44,3 +44,4 @@ function makeBoard() {
     board.push(Array.from({ length: WIDTH }));
   }
 }
+makeBoard();

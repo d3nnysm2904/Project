@@ -8,8 +8,8 @@ buttonCreate.addEventListener("click", function createImg(e) {
   e.preventDefault();
 
   const newImg = document.createElement("img");
-  const topT = document.createElement("h2");
-  const bottomT = document.createElement("h2");
+  const topT = document.createElement("p");
+  const bottomT = document.createElement("p");
   newImg.setAttribute("src", imgUrl.value);
   newImg.classList.add("newImg");
   bottomT.innerText = bottomText.value;

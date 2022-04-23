@@ -1,36 +1,34 @@
 const order = {
-	variety     : 'green',
-	teaName     : 'silver needle',
-	origin      : 'taiwan',
-	price       : 12.99,
-	hasCaffeine : true,
-    ///quantity:4
+  variety: "green",
+  teaName: "silver needle",
+  origin: "taiwan",
+  price: 12.99,
+  hasCaffeine: true,
+  ///quantity:4
 };
 
 // function checkout (tea) {
 //     const { price , quantity } =tea
 
-//     return price *quantity 
+//     return price *quantity
 // }
 
+// this is the same but we donts use anything other than price and quantity  and assuming there is not quantity we set it to qty
 
-// this is the same but we donts use anything other than price and quantity  and assuming there is not quantity we set it to qty ,kinf of stupid but ok 
-
-//quan 
-function checkout({quantity : qty = 2, price}){
-    return qty * price
+//quan
+function checkout({ quantity: qty = 2, price }) {
+  return qty * price;
 }
 
-const longJumpResults = [ 'Tammy', 'Jessica', 'Violet' ];
-const swimMeetResults = [ 'Japan', 'France', 'Chile' ];
+const longJumpResults = ["Tammy", "Jessica", "Violet"];
+const swimMeetResults = ["Japan", "France", "Chile"];
 
+//this is based on index position
 
-//this is based on index position 
-
-function awardMedals([ gold, silver, bronze ]) {
-	return {
-		gold,
-		silver,
-		bronze
-	};
+function awardMedals([gold, silver, bronze]) {
+  return {
+    gold,
+    silver,
+    bronze,
+  };
 }
