@@ -32,3 +32,14 @@ class Motorcycle extends Vehicle {
     return "VROOM!!";
   }
 }
+garage.vehicles; // []
+garage.add(new Car("Hyundai", "Elantra", 2015)); // "Vehicle added!"
+garage.vehicles; // [Car]
+garage.add("Taco"); // "Only vehicles are allowed in here!"
+
+garage.add(new Motorcycle("Honda", "Nighthawk", 2000));
+// "Vehicle added!"
+garage.vehicles; // [Car, Motorcycle]
+
+garage.add(new Motorcycle("Honda", "Nighthawk", 2001));
+// "Sorry, we're full."
