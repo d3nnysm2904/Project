@@ -9,7 +9,7 @@ $("h1").get(0); //first h1
 $("ul li"); //all li inside ul
 $("*"); //everything in the page
 
-$("h1").text(); //get the text inside h1
+$("h1 ").text(); //get the text inside h1
 $("h1").text("Volcanooo"); //changin text inside to volcanooo
 
 $("li").html(); //get the first li of the page
