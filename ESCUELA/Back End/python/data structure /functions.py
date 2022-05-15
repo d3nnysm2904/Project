@@ -40,3 +40,21 @@ def send_email(to_email, from_email, subject, body):
 # we can set the arguments withaout doing the exact order
 send_email(subject='love', to_email='yaki@algo',
            from_email='denny@alog', body='i love you')
+
+#to know expected arguments
+# help(send_email)
+
+
+def power(x, y=2):
+    return x**y
+
+
+def add_limited_numbers(a, b):
+    """ add two numbers, making sure caps at 100"""
+    sums = a+b
+
+    #comment if required explanation
+    if sums > 100:
+        sums = 100
+
+    return sum
