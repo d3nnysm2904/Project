@@ -4,7 +4,7 @@
 //THATER THAN ACCESSING DATA USING A INDEX, WE USE CUSTOM KEYS  
 
 //   { } ---> object literal
-
+//everyy key is made into an string
 const object = {
     object1 : 1,
     object2 :2 ,  

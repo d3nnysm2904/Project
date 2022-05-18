@@ -57,5 +57,8 @@ for num in range(5): #makes [0,1,2,3,4]
 for num in range(10):
     print(num)
 
-list(range(10))
+list(range(10))  # in terminal creates array [0,1,2,3,4,5,6,7,8,9]
 
+list(range(5, 10))  # starts at 5 [5,6,7,8,9]
+
+list(range(1,10,2))#interval of 2 [1,3,5,7,9]

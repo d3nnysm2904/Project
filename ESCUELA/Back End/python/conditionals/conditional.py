@@ -29,8 +29,15 @@ else:
 msg='go vote' if(age>=18) else 'go play'
 
 # and or not :  is like && || !
+# priority (1)or   (2)and    (3)not
 
 if age < 10 or age >= 65:
     print('The ticket is 10$')
 elif age>10 or age < 65:
         print('ticket is 20') 
+
+
+# trutines and falsines
+# falsi  0  0.0  " "  None(null)   False
+# falsi [](empty list)  {}(empty dictionary)
+# set(empty set)
