@@ -3,7 +3,7 @@
 
 Array.prototype.push = function (val) {
   console.log(`so u want to add ${val} ??`);
-}; //so this changed the push method
+}; //so this changed the push method in console
 
 const num = [1, 2, 3];
 

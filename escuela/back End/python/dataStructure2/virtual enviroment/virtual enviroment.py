@@ -30,11 +30,10 @@
 # how we track what code our libraary is using
 # to see a lsit of installed library
 # pip3 freeze
-# conventianally its helpful to ave this info into a file (typically named requirements.txt)
+# conventianally its helpful to save this info into a file (typically named requirements.txt)
 # pip3 freeze > requirements.txt
 
 # we dont want to add venv file to git hub so we added to git.ignore
-from gc import freeze
 
 
 # pip3 freeze > requirements.txt
