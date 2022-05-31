@@ -30,12 +30,12 @@ num=12
 
 #the f string is like template literal
 
- food='cheese'
- print(f"i love{food}")
+food = 'cheese'
+print(f"i love{food}")
 
- first = denny
- last = sanchez
- full = f"mr {first}-{last}"  mr denny-sanchez
+first = 'denny'
+last = 'sanchez'
+full = f"mr {first}-{last}"  # mr denny-sanchez
 
 
 print(1, 2, 3)  # 1 2 3
