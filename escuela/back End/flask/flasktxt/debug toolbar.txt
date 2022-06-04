@@ -1,0 +1,19 @@
+Flask debug toolbar 
+
+Ultra useful add-on for Flask that shows, in browser, details about app
+install add-on produt 
+in terminal:
+
+pip3 install flask-debugtoolbar
+
+pip3 freeze > requirements.txt
+
+inside app.py 
+
+from flask import Flask, request, render_template
+from flask_debugtoolbar import DebugtoolbarExtension
+
+app=Flask(__name__)
+app.config['SECRET KEY']= 'oh secret'
+
+debug =DebugToolbarExtension(app)

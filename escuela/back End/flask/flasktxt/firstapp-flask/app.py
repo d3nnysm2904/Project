@@ -1,8 +1,11 @@
 
 from crypt import methods
 from flask import Flask, request
+from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = "oh-so-secret"
 
 
 @app.route('/')  # this is home page(the root)
@@ -12,8 +15,7 @@ def home_page():
     <body>
       <h1>This is main page h1 </h1>
       <p>Welcome to my simple app </p>
-      <a href='/somewhere'> Go somewhere page 
-      <hr>
+      <a href='/somewhere'> Go somewhere page  <hr>
       <a href='/search?term=cat&sort=top'> Go to search page <br>
       <a href='/add_comment'> Go to comment page <br>
       <a href='/my_route'> Go to post page <br>
@@ -36,11 +38,11 @@ def take_me_somewhere():
 
 @app.route('/search')
 def search():
-    """Hanlde get request like search?term=fun 
+    """Handle get request like search?term=fun 
      request.args will be filled with information parsed from the query string, (refer to front end how the web works for query string )  """
     # print(request.args)# look in terminal with flask running
-    terms = request.args["term"]  # line 16
-    sort = request.args["sort"]  # line 16
+    terms = request.args["term"]  # line 20
+    sort = request.args["sort"]  # line 20
     return f"<h1> Search Results for:{terms}</h1> <p>Sorting by:{sort}</p>"
 
 
