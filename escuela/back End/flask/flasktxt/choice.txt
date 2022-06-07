@@ -1,9 +1,0 @@
-from random import choice
-
-COMPLIMENTS=['COOL','AMAZING','AWESOME','BEATIFUL']#IMPORT choice
-
-nice_compliment=choice(COMPLIMENTS) #chooses a random complement from COMPLIMENTS 
-
-the best option to select omething our of a list is from random import "sample"
-
-refer to app.py inside of jinja folder 
