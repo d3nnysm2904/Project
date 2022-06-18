@@ -4,7 +4,14 @@ message flashing
 
 Often you eant to provide feedback at "the next page user sees "
 This is most comomn when u will redirect 
+we import flash
+we add in our app.py @app.route or flash('message)
+inside file.htm
+{%for msg in get_flashed_messages() %}
+<p> {{msg}} </p>
+{% endfor %}
 
+----------------------------------
 form flask import flash 
 
 @app.route('/your_route')
@@ -21,6 +28,7 @@ template used by /somewhere/else
 
 ------------------------------------------------------
 flash message categories 
+message is categorie
 
 @app.route('/your_route')
 def your_route():

@@ -1,7 +1,7 @@
 HTTP is what is called a "stateless"protocol 
 on its own it remembers nothing 
 
-"Sving State"
+"Saving State"
 Every request to a site is regarded by the server as separate from every other  
 
 Some Ways To Save State 

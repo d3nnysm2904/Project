@@ -54,7 +54,7 @@ def my_css():
 
 this is tedious so we do :
 
-create a static folder in templates folder 
+create a "static" folder in templates folder 
 
 directory/
 venv/

@@ -51,3 +51,4 @@ q quit debugger
 
 
 
+"*.html": "jinja-html","html"

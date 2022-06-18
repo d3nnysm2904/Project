@@ -2,6 +2,9 @@ from falsk import render_template
 
 this is to add html from inside a 'template 'folder to an @app.route('/thisroute') 
 
+when returning a template and more variables , those variables are to return in the html page as logic variabels  "inside html {{}}"
+
+return render_template('index.html', base= variable in function)
 --------------------------------------------------------------------------------
 
 flask provides an object ,'request , to represent web request 
@@ -43,3 +46,28 @@ this handles the add_comment_form """
         <li>Username:{username}</li>
         <li>Comment:{comment}</li>
     </ul """
+
+
+
+
+request.arg is more like an get method where we get values passed 
+
+request.from is more like POST request beccasue we send a form 
+
+How do session works 
+  Different web frameworks handle this different
+  In flask , session re stored in the browser as a cookie(clietnt side session )
+  they re serialized and signed , so user could see , but cant change their actual session data  ,only flask can  
+
+
+----------------------------------------------- 
+Server Side sesion 
+ Some web frameworks store session data on the server instead of serialized and signed 
+ Send a cookie with "session Key" wich tells server how to get the real data
+ Useful when u have alots of sessions data or complex setups 
+
+
+ Flask sessions docs  
+ easy_install Flask-Session
+ or
+ pip install Flask-Session

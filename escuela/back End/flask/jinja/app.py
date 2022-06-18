@@ -100,10 +100,11 @@ def show_movies():
 
 @app.route('/movies/new', methods=["POST"])
 def add_movie():
-    """"Add to pretend DB
+    """"Add to pretend DataBase
     inside flash the error and success are creating a class to do some css, is in base.html and the css file """
     title = request.form['title']
     # MOVIES.append(titles)# this is with list
+    # error and succes in flash are categories
     if title in MOVIES:
         flash('Movie already Exists ! ', 'error')
     else:
@@ -128,5 +129,5 @@ def add_movie():
 def get_json_movies():
     info = {"name": "whiskey", "cute": "Hella"}
     return jsonify(list(MOVIES))
-#alternate syntax
+# alternate syntax
 # return jsonify(name: "whiskey",cute:"Hella")

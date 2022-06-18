@@ -50,3 +50,11 @@ hello
 i
 love 
 you""".splitlines()#[' ', 'hello', 'i', 'love ', 'you']
+
+
+
+
+# slice 
+
+'lmfao'[:3]#lmf
+'lmfao'[::-1] #'oafml'
