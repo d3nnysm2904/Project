@@ -36,6 +36,8 @@ def my_function():
 
     ...
 
+in terminal :
+python -m unittest file_name.py
 
 Debugger basic 
 ? get help

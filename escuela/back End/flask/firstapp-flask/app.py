@@ -29,10 +29,10 @@ def home_page():
 
 @app.route('/somewhere')  # define a function
 def take_me_somewhere():
-   return "im in somewhere page "
+    return "im in somewhere page "
 
 
-#Flask provides an object,REQUEST, to represent web requests
+# Flask provides an object,REQUEST, to represent web requests
 
 # from flask import request this is up top annoing formater
 
@@ -93,8 +93,8 @@ POST = {
 # .get method will provide a default id if not in dictionarie
 @app.route('/posts/<int:id>')
 def handle_post(id):
-   post = POST.get(id, "post not found")
-   return f"<p>{post}</p>"
+    post = POST.get(id, "post not found")
+    return f"<p>{post}</p>"
 
 
 @app.route('/r/<subreddit>')

@@ -1,33 +1,4 @@
-// let playerRed = "r";
-// let playerYellow = "y";
 
-// let currentPlayer = playerRed;
-
-// const gameOver = false;
-// let board = undefined;
-
-// const row = 6;
-// const columns = 7;
-
-// const boardDiv = document.querySelector("#board");
-
-// function setGame() {
-//   board = [];
-//   for (let r = 0; r < 6; r++) {
-//     let row = [];
-//     for (let c = 0; c < 7; c++) {
-//       row.push(" ");
-
-//       let tile = document.createElement("div");
-//       tile.id = r.toString() + "-" + c.toString();
-//       tile.classList.add("tile");
-//       document.querySelector("#board").appendChild(tile);
-//     }
-//     board.push(row);
-//   }
-// }
-
-// setGame();
 
 /** Connect Four
  *
@@ -36,10 +7,14 @@
  * board fills (tie)
  */
  const startGame = document.querySelector("button");
+ let div=document.querySelector('#game')
+
+div.style.display ='none'
 
  startGame.addEventListener("click", starts);
 
  function starts() {
+  div.style.display='block'
   startGame.remove();
 
 //  const WIDTH = 7;

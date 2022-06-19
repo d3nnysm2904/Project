@@ -28,7 +28,7 @@ Cookie :
  -------------------------------------------------------------------------------
  Flask Sessions 
 
- Cookis are just strings 
+ Cookies are just strings 
  Cookies are limited by how much info u can storage 
  bit of low-level in how you use them 
 

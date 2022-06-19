@@ -173,3 +173,6 @@ arr.push( { "key" : obj["key"]})//this creates a new object
 
 obj["arr"] = arr[1]
 arr.push(obj["a"])
+
+
+// The Array.every () method in JavaScript is used to check whether all the elements of the array satisfy the given condition or not. The Array.some () method in JavaScript is used to check whether at least one of the elements of the array satisfies the given condition or not.
