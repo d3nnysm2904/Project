@@ -18,7 +18,7 @@ class ColorView(TestCase):
 
     def test_color_form(self):
         with app.test_client() as client:
-            # sending a post request to /fav-color
+            # sending a post request to /fav-color and the data send should be blue, but also we can pass a query string
             res = client.post('/fav-color', data={'color': 'blue'})
 
             html = res.get_data(as_text=True)

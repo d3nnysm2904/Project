@@ -28,11 +28,12 @@ class ColorViewsTestCase(TestCase):
     #sending a get request 
     #making a request to '/'
             res = client.get('/')
-            #  this gives us whatever fata is beaing reveived in this case html data
+            #  this gives us whatever data is being received in this case html data
             html = res.get_data(as_text=True)
 
             # making sure our get request(res) is 200 code (ok)
             self.assertEqual(res.status_code, 200)
+
             # is this inside our html variable ,
             self.assertIn('<h1>Color Form</h1>', html)
     
