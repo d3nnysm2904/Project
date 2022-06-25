@@ -1,71 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jeopardy</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Jeopardy Game</h1>
 
-    <button id="start"></button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeopardy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="container">
-     <table class="tg">
-        <thead class="theads">
-          <tr>
-            <th class="tg-0lax"></th>
-            <th class="tg-0lax"></th>
-            <th class="tg-0lax"></th>
-            <th class="tg-0lax"></th>
-            <th class="tg-0lax"></th>
-            <th class="tg-0lax"></th>
-          </tr>
-        </thead>
-        <tbody class="tbody">
-          <tr>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-          </tr>
-          <tr>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-          </tr>
-          <tr>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-          </tr>
-          <tr>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax"></td>
-          </tr>
-        </tbody>
-        </table>
-    </div>
+<body>
 
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <script src="https://unpkg.com/axios/dist/axios.js"></script>
-    <script src="https://unpkg.com/lodash"></script>
-    <script src="app.js"></script>
-  </body>
+  <div id="start">
+    <button class="start">Start Game</button>
+  </div>
+
+ 
+    <button class="restart">New Questions </button>
+
+
+
+  <div class="container">
+
+    <table id="jeopardy">
+
+      <thead id="theads"></thead>
+
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </div>
+
+
+ 
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lodash"></script>
+  <script src="app.js"></script>
+</body>
+
 </html>
-  

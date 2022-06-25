@@ -56,8 +56,10 @@ async function getCategory ( catId )
 {
   let response = await axios.get( `${ BASE_API_URL }category?id=${ catId }` );
   let cat = response.data;
+  console.log(cat)
   let allClues = cat.clues;
   let randomClues = _.sampleSize( allClues, NUM_CLUES_PER_CAT );
+  console.log(randomClues)
   let clues = randomClues.map( ( c ) => ( {
     question: c.question,
     answer: c.answer,
@@ -110,6 +112,7 @@ async function fillTable ()
 function handleClick ( evt )
 {
   let id = evt.target.id;
+  console.log(id)
   let [ catId, clueId ] = id.split( "-" );
   let clue = categories[ catId ].clues[ clueId ];
 

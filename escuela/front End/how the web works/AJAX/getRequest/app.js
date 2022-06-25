@@ -98,12 +98,16 @@ async function getDogByBreed(breed) {
   }
 }
 
+
+
 document.querySelector("#pic").addEventListener("click", function (e) {
   e.preventDefault();
   const input = document.querySelector('input[type="text"]');
   const breeds = input.value;
+  console.log(breed)
   getDogByBreed(breeds);
   input.value = "";
+
 });
 
 //more  axios methods
@@ -121,3 +125,4 @@ async function getJoke(firstName, lastName) {
   });
   console.log(res.data.value.joke);
 }
+
