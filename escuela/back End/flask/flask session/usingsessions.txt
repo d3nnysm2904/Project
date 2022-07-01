@@ -5,7 +5,7 @@ import session from flask
 set a secret key 
 
 
-from falsk import session 
+from flask import session 
 
 app=Flask(__name__)
 app.config["SECRET_KEY"]= "SHHHH SEEKRIT"
@@ -21,7 +21,7 @@ def some_route():
     session['username']= 'denny'
     session['leaderboard']=['butters','kratos','luffy']
     
-   # return f"Faavorite number is {session['fav_number']}"
+   # return f"Favorite number is {session['fav_number']}"
     return render_template('index.html')
 
 

@@ -1,9 +1,9 @@
-# how to rea a file
+# how to read a file
 
 # you can open an on-disk file with - open(file_path,mode)
 # file_path: absolute or relative path
 # mode:string of how to open file ("r" for reading or 'w' for wrtiting ,'a' for append  )
-# it returns an file-tyoe insatnce
+# it returns an file-type insatnce
 
 file = open('morse.txt', 'r')
 
@@ -33,3 +33,5 @@ file3 = open('demo.txt', 'w')
 file3.write('this creates a new file ')
 
 file3.close()
+
+

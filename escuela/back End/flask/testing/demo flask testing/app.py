@@ -4,12 +4,16 @@ from flask import Flask, request, render_template, redirect, session
 from flask_debugtoolbar import DebugToolbarExtension
 
 
+# Make flask error be  real errors , not html pages with error info 
+
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "abc123"
 app.debug = True
 
 toolbar = DebugToolbarExtension(app)
 
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS']=False  #this to redirect directly to ('/)
 
 @app.route('/')
 def index():

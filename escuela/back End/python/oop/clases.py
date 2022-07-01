@@ -19,10 +19,12 @@ class Triangle:
     """ Rigth triangle
     rand int gives a random number 
     init is like constructor in java script
-    math.sqrt get tthe square root  
+    math.sqrt get tthe square root
+      
     @classmethod alter the behavior of the function after it
-    cls is a reference to class Traingle   
+    class is a reference to class Traingle   
     calss method is somethinf tha always will do a exact thing you wnat it to do 
+    
     instance methods takes as many argumant as you want 
     str  and repr both return strings represetnations but
     # str is more fo user use 
