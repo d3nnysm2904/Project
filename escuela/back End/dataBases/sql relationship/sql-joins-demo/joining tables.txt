@@ -1,0 +1,21 @@
+The JOIN operation allows us to create a table in memory by combining information from different tables 
+Data from tables is matched according to a join condition 
+Most commonly , the join condition involves comparing a foreing key from one table and a primary key in another table  
+
+
+title is from movies tables and name is from studios table 
+
+ we are going to join studio_id on movies with the id of studios ,reference it 
+
+SELECT title,name
+ FROM movies 
+ JOIN studios 
+ ON movies.studio_id=studios.id;
+
+
+ INNER JOINS 
+
+
+ if i wnated to select both id from movies and studio 
+
+ SELECT movies.id, studios.id FROM books JOIN studios ON movies.studio_id = studios.id 

@@ -1,0 +1,42 @@
+working with movies seed 
+
+Relationships 
+
+There is a term in SQL called primary key:
+a primary key within a single table is a unique iidentifier for each row initially is gonna be 'id' 
+
+A foreign key is usually an id referencing another table a foreign table  
+
+
+\dt to see all 
+
+One to Many relationship 
+
+adding an studio name  to the studio table 
+
+INSERT INTO studios (name ,founded_in)VALUES ('Orion Pictures','1980-10-10')
+
+
+then inserting a new movie 
+
+INSERT INTO movies (title,release_year,runtime,rating,studio_id)VALUES
+('Amadeus','1984',180,'R',4);
+
+
+now delete 
+we can't do this because the studios tables has a foreing key that is linked to movies and is used aas reference 
+
+DELETE FROM studios WHERE id =1
+
+option 1 :
+Clear out the studio_id columns of movie that reference it 
+
+UPDATE movies SET studio_id= NULL WHERE studio_id=1;
+DELETE FROM studios WHERE id =1 ;
+
+
+option 2 :
+delete the movies aassociated with the studio first 
+
+DELETE FROM movies WHERE studio_id=1;
+DELETE FROM studios WHERE id =1; 
