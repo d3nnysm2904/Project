@@ -1,0 +1,103 @@
+Refer to app.py inside flaskapp
+
+SQLAlchemy ORM
+  Popular ,powerful Python-based ORM (object-relational mapping)
+  Instead of writing SQL in flask,we instead map that sequel information adn different query into objects, these objects are then things that we can call methods on 
+
+  we are going to be using a variant that is made to work with Flask  
+
+Installing sql alchemy 
+
+Need the program that lets Python speaks PostgresSQL :psycopg2
+Need the program taht provides SQLAlchemy :flask-sqlalchemy
+
+in terminal :
+pip3.8 install psycopg2-binary
+pip3 install flask-sqlalchemy
+
+in our flask app.py :
+
+from flask_sqlalchemy import SQLAlchemy
+
+Then we initialize a variable usually :
+
+db = SQLAlchemy()
+
+Then next things is associate our flask application with the db variable :
+
+db.app = app 
+db.init_app(app)
+
+we still haven't said wich database to use, what the name of it is, to do that we need to configure an very important property :
+This is where we specify not only taht we're using Postgres but also the particular name of the database we want to use 
+
+app.config['SQLALCHEMY_DATABASE_URI]='postgresql:///database_name'
+
+Then run ipython in terminal 
+
+%run app.py 
+there is gonna be a msg like this later we later how to turn off 
+
+
+ run db in terminal 
+    db 
+    <SQLAlchemy engine=postgresql:///movies_example>
+
+this line allows use to directly run SQL code a query from python;
+we save it to a variable:
+
+    movies = db.session.execute("SELECT * FROM movies;")
+
+    if we run the variable as a list: 
+   
+    list(movies)
+
+    this is what we get because movies database 
+
+    [(1, 'Star Wars: The Force Awakens', 2015, 136, 'PG-13', 1),
+ (2, 'Avatar', 2009, 160, 'PG-13', 2),
+ (3, 'Black Panther', 2018, 140, 'PG-13', 1),
+ (4, 'Jurassic World', 2015, 124, 'PG-13', 3),
+ (5, 'Marvel’s The Avengers', 2012, 142, 'PG-13', 1),
+ (7, 'Amadeus', 1984, 180, 'R', 4),
+ (8, 'Guardians 2', None, None, None, None)]
+
+looping
+
+all_movies =list(movies)
+
+for movie in all_movies:
+print(movies[1],movies[4])
+
+ *************************************************************************
+ A BETTER WAY TO CONECTING 
+ORM (object-relational mapping)
+
+Configuring SQLAlchemy
+
+usually we move all database stuff into a file \
+we define a model 
+a model is a class that represent something in your SQL database so if we're working with movies db we create a movie model 
+
+we create a model.py and pass all info related to database and in app.py we import everything 
+
+in app.py refer to app.py and models.py   : 
+
+from models import db , connect_db
+
+connect_db(app)
+
+
+Seting up SQLAlchemy :
+
+SQLALCHEMY_DATABASE_URI- Where is the database 
+
+SQLALCHEMY_TRACK_MODIFICATIONS- Set this to false or SQLAlchemy will yell at you :
+
+FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+
+To make this away :
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
+SQLALCHEMY_ECHO -Print all SQL statements to the terminal (helpful for debbugin )

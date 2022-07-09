@@ -69,9 +69,14 @@ Common Commands
 
 \d table_name -gets details about table_name (in current db )
 
+\d+ table_name - gets more details 
+
 \q -quit psql (also ctrl+d )
 
 \x -changes the display of the table to be better read 
+
+ctrl+a go to beggining 
+ctrl+e go to end 
 ---------------------------------------
 
 Delete database 

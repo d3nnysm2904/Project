@@ -12,7 +12,7 @@ app.config["SECRET_KEY"]= "SHHHH SEEKRIT"
 
 
 TO use it 
-in routes you can reat session as a dictionary 
+in routes you can read session as a dictionary 
 
 @app.route ('/some-route')
 def some_route():
