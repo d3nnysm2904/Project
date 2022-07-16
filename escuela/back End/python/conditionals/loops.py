@@ -2,13 +2,13 @@
 from itertools import chain
 
 
-count =100 #0 it should be 0 tomake the code works same in guess 
+count =100 # 0 it should be 0 to make the code works same in guess 
 
-while(count<100):
+while(count < 100):
     if count ==50:
         break 
     print(count)
-    count = count + 10 #or count +=10
+    count = count + 10 # or count +=10
 print('All done ')    
 
 
@@ -18,7 +18,7 @@ print('All done ')
 # guess =input('enter a number')
 
 target =44
-guess = 44 #None  (it should be None , but is anyonig to enter guess everytime in the terminal  )  
+guess = 44  #None  (it should be None , but is anyonig to enter guess everytime in the terminal  )  
 
 while guess != target:
     guess=input('Please enter a guess')

@@ -1,0 +1,17 @@
+refer to app.py 
+
+Flask-SQLAlchemy 
+ add-on product to integrate to Flask and SQLAlchemy
+ Benefits
+    Ties SQLAlchemysession to Flask response 
+    Simplifies querying by allowing class 
+
+Difference 
+    With FLASK-SQLAalchemy, all useful methods are on db 
+        With vanilla SQLAalchemy,stuff is spread all over 
+        There are useful web-related methods like :
+        Pet.object.get_or_404(pk)    
+
+
+
+

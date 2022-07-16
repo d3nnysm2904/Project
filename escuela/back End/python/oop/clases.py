@@ -27,7 +27,7 @@ class Triangle:
     
     instance methods takes as many argumant as you want 
     str  and repr both return strings represetnations but
-    # str is more fo user use 
+    # str is more for user use 
     # repr is for developers  """
 
     def __init__(self, a, b):

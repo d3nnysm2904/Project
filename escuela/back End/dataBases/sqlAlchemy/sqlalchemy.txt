@@ -12,6 +12,7 @@ Need the program that lets Python speaks PostgresSQL :psycopg2
 Need the program taht provides SQLAlchemy :flask-sqlalchemy
 
 in terminal :
+
 pip3.8 install psycopg2-binary
 pip3 install flask-sqlalchemy
 
@@ -101,3 +102,213 @@ To make this away :
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
 SQLALCHEMY_ECHO -Print all SQL statements to the terminal (helpful for debbugin )
+
+
+****************************************************************
+Our first MOdel 
+OO into SQL 
+The pcoint of a model is to create a python class so we can call sql in python methods 
+
+first of all we create a new database in the terminal 
+
+createdb pet_shop_db 
+
+This are the types of constraints we are mostly be using 
+Integer
+
+an integer
+
+String(size)
+
+a string with a maximum length (optional in some databases, e.g. PostgreSQL)
+
+Text
+
+some longer unicode text
+
+DateTime
+
+date and time expressed as Python datetime object.
+
+Float
+
+stores floating point values
+
+Boolean
+
+stores a boolean value
+
+PickleType
+
+stores a pickled Python object
+
+LargeBinary
+
+stores large arbitrary binary data
+
+
+********************************************************
+ONCE WE CREATE THE MODEL IN MODELS.PY TO CREATE TEH DATABASE IN THE TERMINAL INSIDE IPYTHON 
+
+%run app.py 
+db.create_all()
+
+
+
+CHANGING  THE MODEL 
+
+ONCE THE MODEL IS CREATED WE CANT UPDATE THE TABLE , THE EASIES WAY IS TO GO TO POSTGRES AND:
+DROP TABLE pets 
+
+
+
+USING OUR MODEL 
+
+Creating and inserting new data into the table 
+
+All we need to do is create a new instance of the pet class 
+we need to make sure in app.py we are importing the class Pet, in this case the one we are working with 
+
+
+>>> fluffy =Pet(name="fluffy",species="Pet")
+>>> fluffy.hunger
+20
+
+>>>db.session.add(fluffy)  #required to add to database 
+>>> db.session.commit()  #commit the transaction
+
+
+--------------------------------------------------------
+Adding several info to our table 
+
+
+ names =['Rocky','Yuma','King']
+ species=['Bully','Dog','Criollo']
+ pets= [Pet(name=n,species=s)for n,s in zip(names,species)]
+
+ zip creates a tuple and relates names with species: Rocky -Bully ; Yuma-Dog; King - Criollo 
+
+ then to add all info to the table db 
+ db.session.add_all(pets)
+
+Modifying a pet in the table so far we have this 
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  2 | Blue          | Cat     |     15
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+
+
+in ipython there is avariable blue that contains information about blue name species and hunger and id ,
+if i want to change this instance in the table 
+
+blue.name= 'Blue Sanchez'
+
+db.session.addd(blue)
+db.session.commit()
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+  2 | Blue Sanchez  | Cat     |     15
+
+----------------------------------------------------------------
+
+Better representation 
+
+
+we use __repr__  to better see a representation of the variable created 
+
+
+    def __repr__(self):
+        """Show info about pet."""
+
+        p = self
+        return f"<Pet id={p.id} name={p.name} species= {p.species} hunger={p.hunger}>"
+
+
+ipython:
+blue 
+<Pet id=2 name=Blue Sanchez species=Cat hunger= 15>
+
+
+----------------------------------------------------------------------
+Quering basics using SQLAalchemy 
+In every single model we create like the Pet class, there is the query  attribute we can call, query is going to give us a query object 
+
+ipython:
+Pet.query
+
+ <flask_sqlalchemy.BaseQuery at 0x7f54dae1a850>
+
+ is like writing but witahout sendig it 
+ SELECT * FROM pets;
+
+  Pet.query.all()
+
+[<Pet 1 Stevie Chicks Chicken 13>,
+ <Pet 3 Rocky Bully 20>,
+ <Pet 4 Yuma Dog 20>,
+ <Pet 5 King Criollo 20>,
+ <Pet 2 Blue Sanchez Cat 15>]
+
+
+Pet.query.get(1)
+
+is like writing :
+
+SELECT* FROM pets WHERE id =1 
+
+FILTER -FILTER_BY 
+
+.query is a objetc that represents the class and has a bunch of methods 
+getting all species that are Dogs:
+
+Pet.query.filter_by(species='Dog').all()
+
+getting the first species that are Dog:
+
+Pet.query.filter_by(species='Dog').first()
+
+gets all dogs and hunger =20:
+
+Pet.query.filter_by(species='Dog',hunger=20)
+
+
+filter uses key words argument 
+
+ Pet.query.filter(Pet.species == 'Cat').all()
+
+
+ Pet.query.filter(Pet.hunger > 20).all()
+
+Pet.query.filter(Pet.Hunger > 15,Pet.species== 'Dog').all()
+
+is like saying 
+
+SELECT * FROMS pets WHERE hunger >15 AND species= 'Dog';
+
+
+***************************************************************
+ Pet.query.all()
+
+ gets all info , but to have all that we have to have  a function like __repr__ in models.py 
+
+ Better representation 
+
+
+we use __repr__  to better see a representation of the variable created 
+
+
+    def __repr__(self):
+        """Show info about pet."""
+
+        p = self
+        return f"<Pet id={p.id} name={p.name} species= {p.species} hunger={p.hunger}>"
+ *********************************************************************

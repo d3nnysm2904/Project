@@ -1,6 +1,6 @@
 # dictionarie
 # mutable,ordered mapping of key->values
-# keys can be any immutable ype
+# keys can be any immutable ypet
 # we cannot a list or other dictionaries
 
 person = {
@@ -15,12 +15,12 @@ stuff = {
 
 'first' in person  # true
 'denny' in person  # false
-#onlly looks for keys
+#only looks for keys
 
 person['first']  # denny
 #cannot use dot notation like in JS
 
-person['first'] = 'D3nny'  # it cahnges the value of first
+person['first'] = 'D3nny'  # it changes the value of first
 
 person['newKey'] = 'newValue'  # creates key and value
 
