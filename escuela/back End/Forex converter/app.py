@@ -1,7 +1,5 @@
 from crypt import methods
 from distutils.log import error
-from locale import currency
-from random import randint, choice, sample
 from flask import Flask, jsonify, request, render_template, redirect, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from forex_python.converter import CurrencyRates, CurrencyCodes
@@ -35,33 +33,19 @@ def home():
     currency_from = request.form['currency']
     currency_to = request.form['currency2']
     amount = request.form['amount']
-    amount = int(amount)
-
+    # amount = int(amount)
     answer2 = 'Not valid '
 
-    if amount != '' or currency_to != currency or currency_from != currency:
-        amount = int(amount)
+    if amount != '' and currency_to != '' and currency_from != '':
+
+        rate = c.convert(currency_from, currency_to, int(amount))
+        symbol = co.get_symbol(currency_to)
+        answer = f"The result is {symbol} {rate} "
+        return render_template('home.html', answer=answer, symbol=symbol)
 
     else:
-        amount = 2
+        amount = None
         currency_from = None
         currency_to = None
-        answer = None
-        rate = None
-        symbol = None
         flash('Invalid input')
         return render_template('home.html', answer2=answer2)
-
-        # amount = False
-        # currency_from = False
-        # currency_to = False
-
-    rate = c.convert(currency_from, currency_to, amount)
-    symbol = co.get_symbol(currency_to)
-    answer = f"The result is {symbol} {rate} "
-
-    if rate is None or symbol is None:
-        rate = False
-        symbol = False
-
-    return render_template('home.html', answer=answer, symbol=symbol)
