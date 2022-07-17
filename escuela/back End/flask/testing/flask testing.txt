@@ -12,7 +12,7 @@ what kinf of thing de we want to test in our falsk aplication ?
 
 
 to do this testing we dont need to start a server, we can do it from the app.py ,flask comes with a particular method called "test_client"
-"test_client' is goint to make us a testing client, like a version of  server as lom=ng as we call test_client
+"test_client' is goint to make us a testing client, like a version of  server as long as we call test_client
 
 
 in testing.py inside of demo folderr 

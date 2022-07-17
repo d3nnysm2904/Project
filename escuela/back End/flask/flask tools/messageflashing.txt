@@ -6,7 +6,7 @@ Often you eant to provide feedback at "the next page user sees "
 This is most comomn when u will redirect 
 we import flash
 we add in our app.py @app.route or flash('message)
-inside file.htm
+inside file.html
 {%for msg in get_flashed_messages() %}
 <p> {{msg}} </p>
 {% endfor %}

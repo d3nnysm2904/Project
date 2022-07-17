@@ -110,12 +110,45 @@ def show_user_profile(username):
  /search?term=dogs&race=bulldog
 
   then request.args creates the inmutabledict[('terms','dogs'),('race','bulldog')]
+
+  we can create a variable in the app.route(/search) like:
+   terms=request.args['terms]
+   and return terms or maybe a f string , it depends on the type of functionality we want to create. 
+
  
 
 - How do you collect data from the body of the request using Flask?
+ 
+ 
+  with the built in methods from _request_ 
+
 
 - What is a cookie and what kinds of things are they commonly used for?
 
+
+  Cookies are a way to store small bits of info on a user client in a web browser 
+information stored in the browser  on the client side, login information , username, info about shopin cart, pages visited ,ads ,etc.
+this information can be send along with a request
+
 - What is the session object in Flask?
 
+  session in flask are a nice way of creating satteful http request or adding state on top 
+  There are different types of Browser Storage 
+
+  Local Storage:
+ stores data in your browser with no expiration date , and gets cleared  only trhoug JavaScript or clearing the browser cache 
+ Domain specific 
+ Storage limit is much larger than a cookie 
+ info not needed in server side 
+ 5mb/10mb storage 
+
+
+Session Storage (different tahn flask session):
+ Stores data only for until the browser or tab is closed, as long as the borwsing session is open 
+ Storage limit is much larger than a cookie 
+ 5mb storage
+
+
 - What does Flask's `jsonify()` do?
+
+ it turn data in JSON to readeable info 
