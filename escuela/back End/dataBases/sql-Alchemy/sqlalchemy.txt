@@ -37,7 +37,7 @@ app.config['SQLALCHEMY_DATABASE_URI]='postgresql:///database_name'
 Then run ipython in terminal 
 
 %run app.py 
-there is gonna be a msg like this later we later how to turn off 
+ 
 
 
  run db in terminal 
@@ -107,7 +107,7 @@ SQLALCHEMY_ECHO -Print all SQL statements to the terminal (helpful for debbugin 
 ****************************************************************
 Our first MOdel 
 OO into SQL 
-The pcoint of a model is to create a python class so we can call sql in python methods 
+The point of a model is to create a python class so we can call sql in python methods 
 
 first of all we create a new database in the terminal 
 
@@ -154,10 +154,15 @@ ONCE WE CREATE THE MODEL IN MODELS.PY TO CREATE TEH DATABASE IN THE TERMINAL INS
 db.create_all()
 
 
+if we want to drop the db 
+
+db.drop_all()
+
 
 CHANGING  THE MODEL 
 
 ONCE THE MODEL IS CREATED WE CANT UPDATE THE TABLE , THE EASIES WAY IS TO GO TO POSTGRES AND:
+
 DROP TABLE pets 
 
 
@@ -172,7 +177,7 @@ we need to make sure in app.py we are importing the class Pet, in this case the 
 
 >>> fluffy =Pet(name="fluffy",species="Pet")
 >>> fluffy.hunger
-20
+20 (is set to default )
 
 >>>db.session.add(fluffy)  #required to add to database 
 >>> db.session.commit()  #commit the transaction
@@ -202,7 +207,7 @@ Modifying a pet in the table so far we have this
   5 | King          | Criollo |     20
 
 
-in ipython there is avariable blue that contains information about blue name species and hunger and id ,
+in ipython there is a variable blue that contains information about blue name species and hunger and id ,
 if i want to change this instance in the table 
 
 blue.name= 'Blue Sanchez'

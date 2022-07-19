@@ -1,0 +1,38 @@
+
+
+class Dt(db.Model):
+
+
+    __tablename__ = "departments"
+
+     emp = db.relationship('Emp')
+
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+
+   
+
+    dept = db.relationship('Dt')
+
+-----------------------------------------------------
+with backref (needs to reference dept variable )
+
+class Dt(db.Model):
+
+
+    __tablename__ = "departments"
+
+     emp = db.relationship('Emp',backref='departments')
+
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+#dont need to specify here , will aoumatically get .employees to navigate to employees beacuse of backref
+   
+
+

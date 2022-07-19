@@ -4,7 +4,7 @@ Constrains are a basic form of validation. The database can prevent basic types 
 
  Unique (prevent duplicates in the column )
 
- Not Null (prevent null in the column)
+ Not Null (prevent null (lack of a value ,cant be empty) in the column)
 
  Check (do a logical condition before inserting /updating )
 

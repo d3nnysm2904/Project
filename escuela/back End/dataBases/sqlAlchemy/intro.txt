@@ -1,9 +1,0 @@
-Learnign to use object-oriented techniques with relational  DBs
-Without writing any SQL 
-
->>> whiskey = Pet(name ='whiskey',species='dog',hunger=50)
-
->>> whiskey.hunger
-50
-
->>>whiskey.hunger=20s

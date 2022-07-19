@@ -16,7 +16,7 @@ TIMESTAMP - date and time
 SERIAL - Auto-incrementing numbers (used for primary keys ; most commonly ids )
 
 
-NULL - is a special value in SQL for "unknown "; it's not the same thing as 0 or empty string 
+NULL - is a special value in SQL for "unknown "; it's not the same thing as 0 or empty string (dont leave value empty )
 
 
 This selects empty tables from subreddit table

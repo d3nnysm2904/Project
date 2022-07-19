@@ -19,7 +19,7 @@ def connect_db(app):
 # primary_key=True is just PRIMARY KEY from postgres UNIQUE NOT NULL 
 #   autoincrement=True) is just SERIAL  from postgres
 # next name=db.Column 
-# db.String(50) is s string with a limit of 50 characters
+# db.String(50) is a string with a limit of 50 characters
 # nullable=False is just NOT NULL  
 
 # to create the table isnide ipython 
@@ -58,6 +58,16 @@ def connect_db(app):
 
 # then to add all info to the table db 
 # db.session.add_all(pets)
+
+# CREATE TABLE pets (
+#         id SERIAL NOT NULL,
+#         name VARCHAR(50) NOT NULL,
+#         species VARCHAR(30),
+#         hunger INTEGER NOT NULL,
+#         PRIMARY KEY (id),
+#         UNIQUE (name)
+# )
+# up here is the same than class Pet
  
 class Pet(db.Model):
     """Pet."""
