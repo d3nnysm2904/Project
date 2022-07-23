@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_debugtoolbar import DebugToolbarExtension
-from models import Emp, Dt, db, connect_db, get_directory
+from models import Emp, Dt, db, connect_db, get_directory_join, get_directory_join_all
+
 
 app = Flask(__name__)
 

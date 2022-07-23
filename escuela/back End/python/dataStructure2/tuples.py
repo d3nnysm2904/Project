@@ -1,4 +1,4 @@
-# tuples are like list but immutable
+# tuples are like list but inmmutable
 
 t1 = (1, 2, 3)
 

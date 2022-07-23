@@ -18,13 +18,16 @@ use_decimal = True
 app.config['SECRET_KEY'] = "oh-so-secret"
 
 
+def rate(fr, to, amt):
+
+    rates = c.convert(fr, to, amt)
+
+    return print(list(rates))
+
+
 @app.route('/')
 def home_page():
     return render_template('home.html')
-
-
-currency = {'EUR'
-            'IDR', 'BGN', 'ILS', 'GBP', 'DKK', 'CAD', 'JPY', 'HUF', 'RON', 'MYR', 'SEK', 'SGD', 'HKD', 'AUD', 'CHF', 'KRW', 'CNY', 'TRY', 'HRK', 'NZD', 'THB', 'USD', 'NOK', 'RUB', 'INR', 'MXN', 'CZK', 'BRL', 'PLN', 'PHP', 'ZAR'}
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -33,15 +36,15 @@ def home():
     currency_from = request.form['currency']
     currency_to = request.form['currency2']
     amount = request.form['amount']
-    # amount = int(amount)
     answer2 = 'Not valid '
 
     if amount != '' and currency_to != '' and currency_from != '':
-
+        rates = rate(currency_from, currency_to, int(amount))
         rate = c.convert(currency_from, currency_to, int(amount))
+
         symbol = co.get_symbol(currency_to)
         answer = f"The result is {symbol} {rate} "
-        return render_template('home.html', answer=answer, symbol=symbol)
+        return render_template( 'home.html', answer=answer, symbol=symbol,rates=rates)
 
     else:
         amount = None
@@ -49,3 +52,4 @@ def home():
         currency_to = None
         flash('Invalid input')
         return render_template('home.html', answer2=answer2)
+#
