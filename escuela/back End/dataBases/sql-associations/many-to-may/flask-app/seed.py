@@ -34,11 +34,14 @@ db.create_all()
 
 # db.session.commit()
 
-
+EmpPj.query.delete()
 Emp.query.delete()
 Dt.query.delete()
 Pj.query.delete()
-EmpPj.query.delete()
+
+
+
+
 
 # Add sample employees and departments
 df = Dt(dept_code='fin', dept_name='Finance', phone='555-1000')

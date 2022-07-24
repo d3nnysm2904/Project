@@ -40,12 +40,15 @@ class Emp(db.Model):
     dept = db.relationship('Dt', backref='employees')
 
     # direct navigation: emp -> employeeproject & back
-    # assignments = db.relationship('EmpPj', backref='employee')/
+    assignments = db.relationship('EmpPj', backref='employee')
 
-#secondary refers to a __tablename__ in this case EmpPj __tablename__='employee_projects'
+# secondary refers to a __tablename__ in this case EmpPj __tablename__='employee_projects'
+
     # direct navigation: emp -> project & back
     projects = db.relationship(
-        "Pj", secondary="employees_projects", backref="employee")
+        "Pj",  secondary="employee_projects", backref="employee")
+
+    # )
 
     def __repr__(self):
         """Show info about pet."""
@@ -88,18 +91,25 @@ class Pj(db.Model):
                           nullable=True  # meaning is required
                           , unique=True)
 
-    # dept_proj = db.relationship('EmpPj', backref='projects')
+    dept_proj = db.relationship('EmpPj', backref='projects')
 
-    # assignments = db.relationship('EmpPj', backref='project')
+    assignments = db.relationship('EmpPj', backref='project')
 
 
 class EmpPj(db.Model):
+    __tablename__ = 'employee_projects'
 
-    __tablename = 'employees_projects'
-    #we can have a primary key that consist in two columns in db table example emp_id and proj_code, this two pk go together , and need a employee.id and projects.proj_code
+    # we can have a primary key that consist in two columns in db table example emp_id and proj_code, this two pk go together , and need a employee.id and projects.proj_code
 
     emp_id = db.Column(db.Integer,
                        db.ForeignKey('employees.id'), primary_key=True)  # this constraint is enforced
     proj_code = db.Column(db.Text,
                           db.ForeignKey('projects.proj_code'), primary_key=True)
     role = db.Column(db.Text)
+
+
+# So this is way to tell what code to run if I do something like python app.py you can put your code inside that if statement and only that code will run if you run the code from cli. An example of this is for could be like
+
+# if __name__ == "__main__":
+
+#     app.run(debug=True)

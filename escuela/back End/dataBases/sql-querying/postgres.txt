@@ -39,6 +39,8 @@ ctrl+d
 ----- 
 to create a database we use a command :
 
+create database db_name 
+
 createdb database_name 
 
 this is inisde terminal not psql shell 
@@ -81,7 +83,8 @@ ctrl+e go to end
 
 Delete database 
 
-dropdb my_database_name 
+dropdb name_db
+drop database  my_database_name 
 
 -----------------------------
 you can also make a backup of your database by "dumping it" to a file :
