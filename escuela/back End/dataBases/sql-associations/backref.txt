@@ -36,3 +36,11 @@ class Emp(db.Model):
    
 
 
+in ipython
+
+  d= Dt.query.get('mktg')  gets mktg pk 
+
+  d.employees  # all employees with pk mktg
+
+  id=1 name=Denny Sanchez state= NYC >,
+ < id=2 name=Jenny Mosquera state= FL >]

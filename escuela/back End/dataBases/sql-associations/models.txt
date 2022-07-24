@@ -97,6 +97,10 @@ we can add whats called a relationship (db.relationship), this will create a att
 So if we have a foreign key (dept_code in table employees )setup i can then pass db.relationship and pass in a model that matches (Dt)
 dept is what we'll use to actually view the data base of that relationship
 
+is like __repr__
+
+
+
 
 class Emp(db.Model):
 

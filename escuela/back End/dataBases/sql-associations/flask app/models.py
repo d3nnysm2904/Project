@@ -1,7 +1,7 @@
 """Sample file demonstrating SQLAlchemy joins & relationships."""
 
+from enum import unique
 from flask_sqlalchemy import SQLAlchemy
-from app import app
 
 # This is the connection to the database; we're getting this through
 # the Flask-SQLAlchemy helper library. On this, we can find the `session`
@@ -29,7 +29,11 @@ class Dt(db.Model):
     dept_name = db.Column(db.Text,
                           nullable=False,
                           unique=True)
+
     phone = db.Column(db.Text)
+
+    # This creates a relationship betwen our two models and we can call it from python
+    # emp = db.relationship('Emp')
 
     def __repr__(self):
         """Show info about pet."""
@@ -55,7 +59,7 @@ class Emp(db.Model):
                       default='FL')
 
     dept_code = db.Column(db.Text,
-                          db.ForeignKey('departments.dept_code'))  # we create a relationship primary\foreign between both tables dept_code (s) , from  __tablename__= departments  , not the Dt model , __the tablename__;this constraint is enforced
+                          db.ForeignKey('departments.dept_code'))  # we create a relationship primary\foreign between both tables dept_code (s) , from  __tablename__= departments  , not the Dt model , __the tablename__
 
     dept = db.relationship('Dt', backref='employees')
 
@@ -67,7 +71,7 @@ class Emp(db.Model):
 
 
 def get_directory():
-    """Not efficient when having alot of info in database """
+    '''Not super efficient like this ,fo now is ok '''
 
     all_emps = Emp.query.all()
 
@@ -76,22 +80,3 @@ def get_directory():
             print(emp.name, emp.dept.dept_name, emp.dept.phone)
         else:
             print(emp.name)
-
-
-def get_directory_join():
-    """MORE EFFICIENT """
-
-    directoy = db.session.query(
-        Emp.name, Dt.dept_name, Dt.phone).join(Dt).all()
-
-    for name, dept, phone in directoy:
-        print(name, dept, phone)
-
-
-def get_directory_join_all():
-    """MORE EFFICIENT """
-
-    directoy = db.session.query(Emp, Dt).join(Dt).all()
-
-    for emp, dept in directoy:
-        print(emp.name, dept.dept_name, dept.phone)
