@@ -3,7 +3,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 from models import db, connect_db, User, Emp, EmpPj, Dt, Pj
 from forms import AddSnackForm, NewEmployeeForm
-from wtforms.validators import InputRequired, Optional, Email
+
 # from forms import AddSnackForm
 # from forms import UserForm
 

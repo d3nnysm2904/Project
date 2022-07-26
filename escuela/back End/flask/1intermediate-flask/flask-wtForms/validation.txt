@@ -1,0 +1,20 @@
+When we define our individual form classes, we can also add in special validators tha can say price can be between 0 and 20 $
+
+in app.py when we do form = NewEmployeeForm()
+
+when there is a validators and validation is not meet in console whe can do : form.errors
+
+Syntax
+
+form.py 
+
+
+from wtforms.validators import InputRequired,Optional,Email
+
+class NewEmployeeForm(FlaskForm):
+
+    name=StringField('Name',
+                    validators=[InputRequired])
+    
+    email=StringField('Email Address'.
+                      validators=[Optional(),Email() ]  )
