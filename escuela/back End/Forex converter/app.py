@@ -39,12 +39,12 @@ def home():
     answer2 = 'Not valid '
 
     if amount != '' and currency_to != '' and currency_from != '':
-        rates = rate(currency_from, currency_to, int(amount))
+        # rates = rate(currency_from, currency_to, int(amount))
         rate = c.convert(currency_from, currency_to, int(amount))
 
         symbol = co.get_symbol(currency_to)
         answer = f"The result is {symbol} {rate} "
-        return render_template( 'home.html', answer=answer, symbol=symbol,rates=rates)
+        return render_template('home.html', answer=answer, symbol=symbol, rate=rate)
 
     else:
         amount = None

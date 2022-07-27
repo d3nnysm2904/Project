@@ -61,7 +61,9 @@ def add_snack():
 def new_emp():
 
     form = NewEmployeeForm()
+
     depts = db.session.query(Dt.dept_code, Dt.dept_name)
+
     form.dept_code.choices = depts
 
     if form.validate_on_submit():

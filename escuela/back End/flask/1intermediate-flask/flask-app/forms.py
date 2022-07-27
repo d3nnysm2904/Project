@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, BooleanField, RadioField, SelectField
 from wtforms.validators import InputRequired, Optional, Email
+# from app import depts
 states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
           "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
           "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
@@ -27,6 +28,7 @@ class AddSnackForm(FlaskForm):
 class NewEmployeeForm(FlaskForm):
 
     name = StringField("Employee Name",
-                       validators=[InputRequired(message='pinga pon tu nombre')])
+                       validators=[InputRequired(message='Name Required')])
     state = SelectField("State", choices=[(st, st) for st in states])
+
     dept_code = SelectField("Departament Code")
