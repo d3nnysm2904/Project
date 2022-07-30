@@ -52,7 +52,8 @@ class Emp(db.Model):
     dept = db.relationship('Dt', backref='employees')
 
     # direct navigation: emp -> employeeproject & back
-    assignments = db.relationship('EmpPj', backref='employee')
+    assignments = db.relationship(
+        'EmpPj', backref='employee', passive_deletes=True)
 
 # secondary refers to a __tablename__ in this case EmpPj __tablename__='employee_projects'
 
@@ -113,11 +114,17 @@ class EmpPj(db.Model):
 
     # we can have a primary key that consist in two columns in db table example emp_id and proj_code, this two pk go together , and need a employee.id and projects.proj_code
 
-    emp_id = db.Column(db.Integer,
-                       db.ForeignKey('employees.id'), primary_key=True)  # this constraint is enforced
+    emp_id = db.Column(db.Integer,            # this constraint is enforced
+                       db.ForeignKey('employees.id', ondelete='CASCADE'), primary_key=True, nullable=False)
     proj_code = db.Column(db.Text,
-                          db.ForeignKey('projects.proj_code'), primary_key=True)
+                          db.ForeignKey('projects.proj_code',
+                                        primary_key=True))
+
+    parent = db.relationship('Emp', backref=db.backref(
+        'employees_projects', passive_deletes=True))
+
     role = db.Column(db.Text)
+    # parent = db.relationship('Emp', cascade="all,delete", backref='employees')
 
 
 # So this is way to tell what code to run if I do something like python app.py you can put your code inside that if statement and only that code will run if you run the code from cli. An example of this is for could be like

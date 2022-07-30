@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, redirect, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
 from models import db, connect_db, User, Emp, EmpPj, Dt, Pj
-from forms import AddSnackForm, NewEmployeeForm
+from forms import AddSnackForm, EmployeeForm
 
 # from forms import AddSnackForm
 # from forms import UserForm
@@ -60,11 +60,13 @@ def add_snack():
 @app.route('/employees/new', methods=['GET', 'POST'])
 def new_emp():
 
-    form = NewEmployeeForm()
+    form = EmployeeForm()
 
     depts = db.session.query(Dt.dept_code, Dt.dept_name)
-
-    form.dept_code.choices = depts
+    choices = []
+    for dept in depts.all():
+        choices.append((dept[0], dept[1]))
+        form.dept_code.choices = choices
 
     if form.validate_on_submit():
         name = form.name.data
@@ -81,16 +83,30 @@ def new_emp():
     else:
         return render_template('add_emp_form.html', form=form)
 
-    # @app.route("/users/<int:uid>/edit", methods=["GET", "POST"])
-    # def edit_user(uid):
-    #     """Show user edit form and handle edit."""
-    #     user = User.query.get_or_404(uid)
-    #     form = UserForm(obj=user)
-    #     if form.validate_on_submit():
-    #         user.name = form.name.data
-    #         user.email = form.email.data
-    #         db.session.commit()
-    #         flash(f"User {uid} updated!")
-    #         return redirect(f"/users/{uid}/edit")
-    #     else:
-    #         return render_template("user_form.html", form=form)
+
+@app.route('/employees/<int:id>/edit', methods=['GET', 'POST'])
+def edit_employee(id):
+
+    emp = Emp.query.get_or_404(id)
+    form = EmployeeForm(obj=emp)
+    depts = db.session.query(Dt.dept_code, Dt.dept_name)
+    choices = []
+    for dept in depts.all():
+        choices.append((dept[0], dept[1]))
+        form.dept_code.choices = choices
+    if form.validate_on_submit():
+        emp.name = form.name.data
+        emp.state = form.state.data
+        emp.dept_code = form.dept_code.data
+        db.session.commit()
+        return redirect('/phones')
+    else:
+        return render_template('edit.html', form=form)
+
+
+@app.route('/employees/<int:id>/delete', methods=['POST'])
+def delete(id):
+    emp = Emp.query.get_or_404(id)
+    db.session.delete(emp)
+    db.session.commit()
+    return redirect('/phones')

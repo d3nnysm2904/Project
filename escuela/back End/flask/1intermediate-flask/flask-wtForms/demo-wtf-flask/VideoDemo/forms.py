@@ -11,7 +11,7 @@ states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
 
 
 class AddSnackForm(FlaskForm):
-    email = StringField("Email", validators=[Optional(), Email()])
+    # email = StringField("Email", validators=[Optional(), Email()])
     name = StringField("Snack Name",  validators=[
                        InputRequired(message="Snack Name can't be blank")])
     price = FloatField("Price in USD")
