@@ -72,10 +72,9 @@ def new_emp():
         name = form.name.data
         state = form.state.data
         dept_code = form.dept_code.data
-        dept_name = form.dept_code.data
 
         new_emp = Emp(name=name, state=state,
-                      dept_code=dept_code, dept_name=dept_name)
+                      dept_code=dept_code)
 
         db.session.add(new_emp)
         db.session.commit()

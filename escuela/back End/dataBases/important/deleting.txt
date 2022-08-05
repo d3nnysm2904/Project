@@ -10,3 +10,17 @@ DELETE FROM books WHERE page_count >200 ;
 
 -Delete all books 
 DELETE FROM  books 
+
+
+dropinf datatbases 
+
+drop datatbases db_name ;
+
+Droping tables 
+drop table table_name;
+
+
+Python
+emp = Emp.query.get_or_404(id)
+db.session.delete(emp)
+db.session.commit()

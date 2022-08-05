@@ -33,3 +33,8 @@ if "code ." in terminal doesnt work
 
 LOOK UP 
 VS Code Command is not detected 
+
+
+
+
+'/home/d3nnysm2904/directory/escuela/back End/flask/1intermediate-flask/externalApiRequest/venv/bin/python3.8 -m pip install --upgrade pip' command.
