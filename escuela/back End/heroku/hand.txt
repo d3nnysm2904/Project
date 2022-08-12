@@ -15,6 +15,11 @@ Install the Heroku CLI
 
 $ brew install heroku/brew/heroku
 
+or 
+
+
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
 Installing gunicorn
 When we deploy an application in production, we will always want to use a server that is production ready and not meant for just development.
 
